@@ -42,4 +42,5 @@ text file which has the list of all user-agents
     USER_AGENT_LIST = "/path/to/useragents.txt"
 
 Now all the requests from your crawler will have a random user-agent
-picked from the text file.
+picked from the text file.  If ``USER_AGENT_LIST`` is not specified, 
+a fairly robust default list is used.
