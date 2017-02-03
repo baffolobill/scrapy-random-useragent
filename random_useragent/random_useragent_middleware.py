@@ -15,11 +15,11 @@ class RandomUserAgentMiddleware(UserAgentMiddleware):
     def __init__(self, settings, user_agent='Scrapy'):
         super(RandomUserAgentMiddleware, self).__init__()
         self.user_agent = user_agent
-        user_agent_list_file = settings.get('USER_AGENT_LIST')
+        user_agent_list_file = settings.get('USER_AGENT_LIST_FILE')
         if not user_agent_list_file:
             # If USER_AGENT_LIST_FILE settings is not set,
             # use the default ones provided
-            self.user_agent_list = default_user_agents.DEFAULT_USER_AGENTS
+            self.user_agent_list = settings.get('USER_AGENT_LIST', default_user_agents.DEFAULT_USER_AGENTS)
         else:
             with open(user_agent_list_file, 'r') as f:
                 self.user_agent_list = [line.strip() for line in f.readlines()]
