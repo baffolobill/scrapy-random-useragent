@@ -12,7 +12,7 @@ with codecs.open('README.rst', encoding='utf-8') as f:
 
 
 # Open the package file so we can read the meta data.
-with codecs.open('random_useragent.py', encoding='utf-8') as f:
+with codecs.open('random_useragent/__init__.py', encoding='utf-8') as f:
     package_file = f.read()
 
 
@@ -39,12 +39,11 @@ setup(
 
     author=author,
     author_email=email,
-    url='https://github.com/cnu/scrapy-random-useragent',
+    url='https://github.com/baffolobill/scrapy-random-useragent',
 
     license=license,
-
-    py_modules=['random_useragent'],
     platforms=['Any'],
+    packages=['random_useragent'],
 
     keywords="scrapy random user-agent ",
     classifiers=[
